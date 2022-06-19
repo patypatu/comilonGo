@@ -1,0 +1,24 @@
+.fondoBody{
+    background-image: linear-gradient(#e6935c, #ffffff);
+}
+
+.main-container {
+    background-color: #ffffff;
+  }
+
+.colorNavbar{
+
+    background-color: #ffffff;
+
+}
+
+.colorTabla{
+    background-color: #f1c1a1;
+}
+
+.tamanoImagenTabla{
+    height: 135px ;
+    width:  200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
