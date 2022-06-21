@@ -22,3 +22,36 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+.rowEditado{
+  
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+
+}
+
+.tamañoLogoRestaurant{
+    height: 200px ;
+    width: 200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.bordeNosotros{
+    border: #e6935c 5px solid;
+    border-radius: 40px;
+    margin: 10px;
+    padding: 1.2% 1% 0%;
+    box-shadow: 2px 2px 5px #424040
+  }
+
+  .bordeNosotrosImg {
+    border: transparent;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px #424040;
+  
+  }
