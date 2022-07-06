@@ -55,3 +55,24 @@
     box-shadow: 2px 2px 5px #424040;
   
   }
+
+  .fondoBodyAdmin{
+    background-image: linear-gradient(#575757, #ffffff);
+  }
+  
+  .tamanoImagenTabla{
+    height: 174px ;
+    width:  250px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .tablaAdmin{
+    table-layout: fixed;
+  }
+  
+  .editada{
+    width: 130px;
+    overflow: auto;
+    border: 1px solid;
+  }

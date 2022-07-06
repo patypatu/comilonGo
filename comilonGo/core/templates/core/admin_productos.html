@@ -15,7 +15,7 @@
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="{% static 'core/js/productos.js' %}"></script> 
+    
 
     <link rel = "stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <script src = "https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js">
@@ -23,12 +23,15 @@
     <script src = "https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js">
     </script>
 
-    <link rel="stylesheet" href="./css/style.css">
+    {% load static %}
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+
+    
     
 
     <title>Comilon GO!!</title>
   </head>
-  <body class="container fondoBody">
+  <body class="container fondoBodyAdmin">
 
 
     <div class="main-container">
@@ -53,51 +56,83 @@
         <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light colorNavbar">
 
-        <a class="navbar-brand" href="./index.html"><img src="./img/Logo normal.png" alt="" height="120" width="150"></a>
+        <a class="navbar-brand" href="./index.html"><img src="{% static 'core/img/Logo normal.png' %}" alt="" height="120" width="150"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link h5" href="./index.html">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link h5" href="./index.html">Inicio Página <span class="sr-only">(current)</span></a>
               </li>
               
-              <li class="nav-item">
-                <a class="nav-link h5" href="./menu.html">Menú</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle h5" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                  Productos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                  <a class="dropdown-item" href="./admin_productos.html">Ver Productos</a>
+                  <a class="dropdown-item" href="./crear_producto.html">Crear Productos</a>
+
+
+                </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link h5" href="./producto.html">Producto</a>
-              </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle h5" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                Restaurantes
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                
-                <a class="dropdown-item disabled" href="#"><img src="./img/f567b1_48c1b8bcf6d94043a35f79fb42b772b3_mv2.gif" height="50" alt=""></a>
-              </div>
-            </li>
+
+              
           </ul>
         </div>
       </nav>
 
-      <!-- Contenido-->
-
-      <div class="rowEditado ">
-        <div class="col ">        
-        <img src="./img/banner.png" style="border: transparent; border-radius: 50px;" class="img-fluid container" alt="...">
-        
-      </div>
-      
-      </div>
-    
-        <div class="rowEditado ">
-            <div class="col ">        
-              <img style="border: transparent; border-radius: 50px;" src="./img/menu.png" class="img-fluid container" alt="...">
-            
-            </div>
+    <!-- Contenido-->
+    <div class="rowEditado container-fluid ">
+        <div class="col-md-12 text-center">
+          <img  src="{% static 'core/img/admin.png' %}" class=" img-resposive" height="150" >
         </div>
+      </div>
+
+    <hr class="dropdown-divider">
+    <br>
+
+    <div class="rowEditado container-fluid justify-content-md-center">
+
+      <div class="col-md-12 mb-md-0 mb-5 table-responsive">
+        
+        <table id="tablaProductos" class="tablaAdmin table-bordered table-sm table-hover text-center " style="width:100%" >
+            <thead class="table-info tabla_td">
+                <tr>
+                  <th scope="col">Codigo</th>
+                  <th scope="col">Nombre Categoria</th>
+                  <th scope="col" class="editada ">Imagen</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Precio</th>
+                  
+                  
+                  <!--<th scope="col" colspan="2">Opciones</th>-->
+                </tr>
+              </thead>
+            
+            {% for producto in productos %}
+                
+                <tr>
+                  <td >{{producto.codigo}}</td>
+                  <td>{{producto.categoria}}</td>
+                  <td><a href="{{producto.imagen}}">Imagen</a></td>
+                  <td id>{{producto.descripcion}}</td>
+                  <td>{{producto.precio}}</td>
+                  
+                  
+                </tr>
+
+            {% endfor %}
+        </table>
+        <br>
+        <a class="btn btn-primary" href="./crear_producto.html" role="button">Nuevo Producto</a>
+        
+
+      </div>
+
+    </div>
 
        <!-- Footer -->
     <div class="container bg-light">
