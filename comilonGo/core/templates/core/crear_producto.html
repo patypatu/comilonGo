@@ -24,6 +24,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
+
+    
     
 
     <script type="text/javascript">
@@ -43,30 +45,14 @@
 
                    
 
-          if($("#id_codigo").val().trim().length>=1){
+          if($("#id_codigo").val().trim().length>=1 || $("#id_descripcion").val().trim().length>=1 || $("#id_precio").val().trim().length>=1 || $("#id_imagen").val().trim().length>=1){
 
             if (confirm('Tiene campos con datos,¿Está seguro de volver?')) {
               window.location.href = "./admin_productos.html";
             }
             
           } 
-          else if($("#id_descripcion").val().trim().length>=1){
-
-            if (confirm('Tiene campos con datos,¿Está seguro de volver?')) {
-              window.location.href = "./admin_productos.html";
-            }
-
-          }
-          else if($("#id_precio").val().trim().length>=1){
-            if (confirm('Tiene campos con datos,¿Está seguro de volver?')) {
-              window.location.href = "./admin_productos.html";
-            }
-          }
-          else if($("#id_imagen").val().trim().length>=1){
-            if (confirm('Tiene campos con datos,¿Está seguro de volver?')) {
-              window.location.href = "./admin_productos.html";
-            }
-          }
+          
           else {  
             window.location.href = "./admin_productos.html";
           }
@@ -127,6 +113,7 @@
 
                 <a class="dropdown-item" href="./admin_productos.html">Ver Productos</a>
                 <a class="dropdown-item" href="./crear_producto.html">Crear Productos</a>
+                
 
 
               </div>
@@ -182,27 +169,7 @@
         </div>
     </section>
 
-    <!--Modal-->
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="miModal" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="miModal">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     
     
